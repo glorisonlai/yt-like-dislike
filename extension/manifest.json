@@ -1,0 +1,20 @@
+{
+  "name": "Getting Started Example",
+  "description": "Build an Extension!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js",
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["background", "tabs", "scripting", "activeTab"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
